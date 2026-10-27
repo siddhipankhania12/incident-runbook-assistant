@@ -1,0 +1,10 @@
+﻿services:
+  app:
+    build: .
+    image: runbook-assistant:dev
+    container_name: runbook-assistant
+    ports:
+      - "8090:8000"
+    volumes:
+      - ./runbooks:/app/runbooks:ro
+    restart: unless-stopped
